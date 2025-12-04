@@ -6,7 +6,5 @@ routes = [
   { pattern = "*", custom_domain = true }
 ]
 
-[build]
-command = "npm run build"
-cwd = "."
-upload.dir = "dist"
+[assets]
+directory = "./dist"
