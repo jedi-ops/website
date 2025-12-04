@@ -1,6 +1,5 @@
 name = "jedi-labs-website"
 compatibility_date = "2024-12-04"
-main = "dist/index.html"
 
 [env.production]
 routes = [
@@ -10,15 +9,4 @@ routes = [
 [build]
 command = "npm run build"
 cwd = "."
-
-[[rules]]
-type = "ESModule"
-globs = ["**/*.js"]
-
-[[rules]]
-type = "Text"
-globs = ["**/*.html"]
-
-[[rules]]
-type = "Data"
-globs = ["**/*"]
+upload.dir = "dist"
