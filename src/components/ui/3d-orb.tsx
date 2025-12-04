@@ -163,49 +163,6 @@ export default function Globe() {
     }
     animate()
 
-    // Load high-resolution textures
-    const textureLoader = new THREE.TextureLoader()
-    const loadTexture = (url: string) =>
-      new Promise((resolve) => {
-        textureLoader.load(url, (texture) => resolve(texture))
-      })
-
-    Promise.all([
-      loadTexture("https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"),
-      loadTexture("https://unpkg.com/three-globe/example/img/earth-topology.png"),
-      loadTexture("https://unpkg.com/three-globe/example/img/earth-water.png"),
-    ]).then(([texture, bumpMap, specularMap]) => {
-      const highResMaterial = new THREE.MeshPhongMaterial({
-        map: texture as THREE.Texture,
-        bumpMap: bumpMap as THREE.Texture,
-        bumpScale: 0.05,
-        specularMap: specularMap as THREE.Texture,
-        specular: new THREE.Color("grey"),
-      })
-
-      // Transition to the high-res textured globe
-      const transitionDuration = 1 // seconds
-      const startTime = Date.now()
-
-      const transitionToHighRes = () => {
-        const elapsedTime = (Date.now() - startTime) / 1000
-        const progress = Math.min(elapsedTime / transitionDuration, 1)
-
-        solidGlobe.material = highResMaterial
-        solidGlobe.material.opacity = progress
-        wireframeMaterial.opacity = 0.5 * (1 - progress)
-
-        if (progress < 1) {
-          requestAnimationFrame(transitionToHighRes)
-        } else {
-          setIsHighResLoaded(true)
-          scene.remove(wireframeGlobe)
-        }
-        renderer.render(scene, camera)
-      }
-
-      transitionToHighRes()
-    })
 
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight

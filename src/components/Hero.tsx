@@ -19,11 +19,11 @@ export default function Hero() {
 
             <div className="space-y-6">
               <h1 className="text-3xl md:text-5xl font-bold relative z-10 font-tech-mono tracking-wider leading-relaxed">
-                <span className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 bg-clip-text text-transparent animate-pulse">
+                <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.5)] animate-pulse">
                   Jedi Labs
                 </span>
               </h1>
-              <p className="text-xl text-red-500/90 font-tech-mono tracking-[0.2em] animate-fade-in">
+              <p className="text-xl text-white/80 font-tech-mono tracking-[0.2em] animate-fade-in drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
                 Focused on Warpspeed Product Market Fit for Data Oriented Design Products
               </p>
             </div>
@@ -32,7 +32,7 @@ export default function Hero() {
       </div>
 
       {/* Footer */}
-      <div className="relative z-10 py-6 text-center text-red-500/70 font-tech-mono text-sm tracking-widest">
+      <div className="relative z-10 py-6 text-center text-white/60 font-tech-mono text-sm tracking-widest">
         Jedi Labs © {new Date().getFullYear()} All Rights Reserved
       </div>
 
