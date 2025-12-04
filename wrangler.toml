@@ -1,4 +1,4 @@
-name = "jedi-labs-website"
+name = "website"
 compatibility_date = "2024-12-04"
 
 [env.production]
