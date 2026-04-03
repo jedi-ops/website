@@ -4,8 +4,10 @@ import GlobeVisualization from './Globe';
 export default function Hero() {
   return (
     <div className="min-h-screen flex flex-col justify-between relative overflow-hidden bg-black">
-      {/* Globe Visualization */}
-      <GlobeVisualization />
+      {/* Globe Visualization - centered behind content */}
+      <div className="absolute inset-0 flex items-center justify-center z-0">
+        <GlobeVisualization />
+      </div>
 
       {/* Content Overlay */}
       <div className="flex-grow flex items-center justify-center relative z-10">
