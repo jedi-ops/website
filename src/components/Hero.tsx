@@ -34,8 +34,21 @@ export default function Hero() {
       </div>
 
       {/* Footer */}
-      <div className="relative z-10 py-6 text-center text-white/60 font-tech-mono text-sm tracking-widest">
-        Jedi Labs © {new Date().getFullYear()} All Rights Reserved
+      <div className="relative z-10 py-6 text-center font-tech-mono text-sm tracking-widest space-y-2">
+        <div className="text-white/60">
+          Jedi Labs © {new Date().getFullYear()} All Rights Reserved
+        </div>
+        <div className="text-white/50">
+          A Division of{' '}
+          <a
+            href="https://eden.yeetum.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/80 hover:text-white underline-offset-4 hover:underline transition-colors"
+          >
+            Eden Advisory
+          </a>
+        </div>
       </div>
 
       {/* Google Fonts */}
